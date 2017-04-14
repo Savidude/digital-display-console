@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{title}}</title>
+
+
+    <link href="../stylesheets/theme-wso2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+<header class="header header-default">
+    <div class="container-fluid">
+        <div class="pull-left brand">
+            <a href="#">
+                <img src="../images/logo-inverse.svg" alt="wso2" title="wso2" class="logo">
+                <span>{{title}}</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- modal -->
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDemo">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content clearfix">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fw fw-cancel"></i></button>
+                <h3 class="modal-title" id="deleteModalLabel">Upload Image</h3>
+            </div>
+            <div class="modal-body add-margin-top-2x add-margin-bottom-2x">
+
+                <!-- image upload form -->
+                <form class="form-horizontal" method="post" enctype="multipart/form-data" action="/upload">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label class="control-label">File Upload [Supports Multi Select]</label>
+                            <div class="input-group input-wrap file-upload-control">
+                                <input type="text" class="form-control" readonly="">
+                                <input type="file" class="form-control" multiple="" name="file">
+                                <div class="input-group-btn">
+                                    <button class="btn browse" type="button" title="Browse File">
+                                        <i class="fw fw-file-browse" aria-hidden="true"></i>
+                                        <span class="hidden-xs">Browse</span>
+                                    </button>
+                                </div>
+                                <div class="input-group-btn"></div>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default btn-primary" type="submit" title="Upload">
+                                        <i class="fw fw-upload" aria-hidden="true"></i>
+                                        <span class="hidden-xs">Upload</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /modal -->
+
+<!-- navbar -->
+<div class="navbar-wrapper">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-menu-toggle" aria-expanded="false">
+	                        <span class="icon fw-stack">
+	                            <i class="fw fw-menu fw-stack-1x"></i>
+	                        </span>
+                </a>
+                <div class="navbar-brand">
+                    <a href="#">Images</a>
+                </div>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/">
+                            <i class="fw fw-left fw-helper fw-helper-circle-outline"></i>
+                            Go Back
+                        </a>
+                    </li>
+                    <li class="active" data-toggle="modal" data-target="#modalDelete">
+                        <a href="#">
+	                                <span class="icon fw-stack">
+	                                    <i class="fw fw-add fw-helper fw-helper-circle-outline"></i>
+	                                </span>
+                            Add
+                        </a>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+</div>
+<!-- /navbar -->
+
+<table class="table table-striped table-hover table-bordered display data-table" cellspacing="0" id="images">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Uploaded</th>
+        <th>Preview</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody><!-- Dynamic Content Loads Here --></tbody>
+</table>
+
+<!-- TODO: Cener the text and buttons in tabledata -->
+<!-- <div class="container">
+    <div class="page-header">
+        <h2>Images</h2>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">All Images</h3>
+        </div>
+
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Uploaded</th>
+                        <th>Preview</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="centerCell">cat</td>
+                        <td class="centerCell">Mar 30th, 2017 - 03:14</td>
+                        <td>
+                            <a href="#" class="thumbnail preview">
+                                  <img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg">
+                            </a>
+                        </td>
+                        <td class="centerCell">
+                            <button type="button" class="btn btn-primary" onclick="">
+                                <i class="material-icons" style="font-size: 18px">edit</i>
+                            </button>
+                            <button type="button" class="btn btn-danger" onclick="">
+                                <i class="material-icons" style="font-size: 18px">delete</i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-success" onclick="">
+
+        <span><i class="material-icons" style="font-size: 18px">add</i>
+        Add Image</span>
+
+    </button>
+</div> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../javascripts/bootstrap.min.js"></script>
+<script src="../javascripts/theme-wso2.min.js"></script>
+<script src="../javascripts/images.js"></script>
+</body>
+
+</html>
