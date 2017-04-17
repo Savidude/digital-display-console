@@ -1,0 +1,32 @@
+{
+  "devices": [
+    {
+      "id": "123",
+      "name": "Lift"
+    },
+    {
+      "id": "456",
+      "name": "Lobby"
+    },
+    {
+      "id": "789",
+      "name": "Area A"
+    },
+    {
+      "id": "012",
+      "name": "Area B"
+    },
+    {
+      "id": "345",
+      "name": "Area C"
+    },
+    {
+      "id": "345",
+      "name": "Area C"
+    },
+    {
+      "id": "345",
+      "name": "Area C"
+    }
+  ]
+}
