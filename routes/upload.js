@@ -18,10 +18,7 @@ router.post('/', upload.single('file'), function(req, res, next) {
                 res.send(500);
             } else {
                 updateImageData(req.file.originalname)
-                res.json({
-                    message: 'File uploaded successfully',
-                    filename: req.file.originalname
-                });
+                res.render('images', { title: 'Digital Display Console' });
             }
         });
     } else {
@@ -84,7 +81,7 @@ function getDateTime() {
 
     var month = date.getMonth() + 1;
     month = (month < 10 ? "0" : "") + month;
-
+e
     var day  = date.getDate();
     day = (day < 10 ? "0" : "") + day;
 
