@@ -39,7 +39,7 @@ function updateImageData(filename) {
                                 '"date" : "' + getDateTime() + '"' +
                             '}' +
                         ']' +
-                    '}'
+                    '}';
                 var imageJSONData = JSON.parse(imageData);
                 mkdirp('./public/data', function (err) {
                     if (err) throw err;
